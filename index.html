@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Redirecting to Payment...</title>
-  <!-- Meta Pixel Base Code -->
+  <!-- Meta Pixel -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,19 +13,21 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '588935590823937'); // <-- Replace with your actual Pixel ID
+    fbq('init', '588935590823937');
     fbq('track', 'InitiateCheckout');
   </script>
-  <!-- End Meta Pixel -->
 </head>
 <body>
-  <h2 style="text-align:center; font-family: sans-serif; padding-top: 100px;">
-    Redirecting to payment page...
-  </h2>
+  <div style="text-align: center; font-family: sans-serif; padding-top: 100px;">
+    <h2>We're sending you to the secure payment page...</h2>
+    <p>If the payment page didn't open automatically,</p>
+    <p><a href="https://rzp.io/rzp/10xwap-enrollment" target="_blank" style="font-size: 18px; color: #0077cc; font-weight: bold;">Click here to proceed to payment</a></p>
+  </div>
+
   <script>
+    // Try to open Razorpay in a new tab after slight delay
     setTimeout(function () {
-      window.open("https://rzp.io/rzp/10xwap-enrollment", "_blank");
-      window.close(); // Try to close this window (may be blocked)
+      const payment = window.open("https://rzp.io/rzp/10xwap-enrollment", "_blank");
     }, 500);
   </script>
 </body>
